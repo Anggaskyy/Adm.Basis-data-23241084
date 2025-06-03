@@ -1,7 +1,7 @@
 -- Nama  : Angga Saputra
 -- NIM   : 23241084
 -- Kelas : C  
--- Modul : Modul 1 SELECT, PREFIX dan ALIAS
+-- Modul : Modul 2 SELECT, PREFIX dan ALIAS
 
 -- Menggunakan database
 USE ptic_mart;
