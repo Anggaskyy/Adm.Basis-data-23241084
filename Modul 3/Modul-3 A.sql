@@ -17,10 +17,12 @@ SELECT nama_produk, qty FROM tr_penjualan ORDER BY qty;
 SELECT nama_produk, qty FROM tr_penjualan ORDER BY qty, nama_produk;
 
 -- LATIHAN MANDIRI 1
--- tampilkan semua kolom dari table tr_penjualan_dqlab dengan mengurutkan berdasarkan qty dan tgl_transaksi.
-SELECT * FROM tr_penjualan_dqlab ORDER BY qty, tgl_transaksi;
-SELECT * FROM ms_pelanggan_dqlab ORDER BY qty, nama_pelanggan;
-SELECT * FROM ms_pelanggan ORDER BY qty, alamat;
+-- tampilkan semua kolom dari table tr_penjualan dengan mengurutkan berdasarkan qty dan tgl_transaksi.
+SELECT * FROM tr_penjualan ORDER BY qty, tgl_transaksi;
+-- tampilkan semua kolom dari table ms_pelanggan dengan mengurutkan berdasarkan qty dan nama_pelanggan.
+SELECT * FROM ms_pelanggan ORDER BY nama_pelanggan;
+-- tampilkan semua kolom dari table ms_pelanggan dengan mngurutkan berdasarkan qty dan alamat.
+SELECT * FROM ms_pelanggan ORDER BY alamat;
 
 -- Praktek 3
 -- ambil nama produk, qty dari tb penjualan urutan qty besar ke kecil
@@ -32,9 +34,13 @@ SELECT nama_produk, qty FROM tr_penjualan ORDER BY qty DESC, nama_produk ASC;
 SELECT nama_produk, qty FROM tr_penjualan ORDER BY qty DESC, nama_produk DESC;
 
 -- LATIHAN MANDIRI 2
-SELECT * FROM tr_penjualan_dqlab ORDER BY tgl_transaksi DESC, qty ASC;
-SELECT * FROM ms_pelanggan ORDER BY qty, nama_pelanggan DESC;
-SELECT * FROM ms_pelanggan ORDER BY qty, alamat DESC;
+-- ambil nama produk, qty dari tb penjualan urutan qty kecil ke besar
+SELECT * FROM tr_penjualan ORDER BY tgl_transaksi DESC, qty ASC;
+-- ambil nama produk, qty dari tabel ms_pelanggan urutan qty secara menaik dan nama_pelanggan secara menurun.
+SELECT * FROM ms_pelanggan ORDER BY nama_pelanggan DESC;
+-- ambil nama produk, qty dari tabel ms_pelanggan urutan qty secara menaik dan alamat secara menurun.
+SELECT * FROM ms_pelanggan ORDER BY alamat DESC;
+
 
 -- Praktek 5
 -- menggunakan ORDER BY dari hasil perhitungan kolom
@@ -44,6 +50,11 @@ FROM tr_penjualan
 ORDER BY total DESC;
 
 -- LATIHAN MANDIRI 3
-
+-- tampilkan semua data dari tabel tr_penjualan_dqlab dan hitung: Total harga (qty × harga), Diskon sebesar 10% dari total harg Total harga setelah diskon Urutkan hasil berdasarkan harga setelah diskon dari yang terbesar ke terkecil.
+SELECT *, (qty * harga) AS harga_total,
+       ((qty * harga) * 10 / 100) AS diskon,
+       (qty * harga) - ((qty * harga) * 10 / 100) AS harga_setelah_diskon
+FROM tr_penjualan
+ORDER BY harga_setelah_diskon DESC;
 
 
