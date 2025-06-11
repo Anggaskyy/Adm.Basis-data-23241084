@@ -10,7 +10,7 @@ CREATE DATABASE ptic_mart;
 USE ptic_mart;
 
 -- Membuat Tabel
-create table ms_pelanggan_dqlab(
+create table ms_pelanggan(
 id_pelanggan int PRIMARY KEY NOT NULL,
 nama_pelanggan VARCHAR(50),
 alamat VARCHAR(100),
@@ -18,7 +18,7 @@ kota VARCHAR(15),
 no_tlp VARCHAR(15)
 );
 
-create table ms_produk_dqlab(
+create table ms_produk(
 id_produk int primary key not null,
 nama_produk varchar(50),
 kategori varchar(50),
